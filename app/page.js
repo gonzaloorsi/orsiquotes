@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 export default async function Page() {
   ConnectDB();
   const data = await Quote.find({});
+  revalidatePath("/");
 
   async function createQuote(formData) {
     "use server";
@@ -18,7 +19,7 @@ export default async function Page() {
 
     console.log(newQuote);
 
-    revalidatePath("/", { cache: "no-store" });
+    revalidatePath("/");
   }
 
   return (
