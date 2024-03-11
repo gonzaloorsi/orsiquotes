@@ -18,7 +18,7 @@ export default async function Page() {
 
     console.log(newQuote);
 
-    revalidatePath("/");
+    revalidatePath("/", { cache: "no-store" });
   }
 
   return (
