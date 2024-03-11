@@ -3,6 +3,7 @@ import Quote from "@/models/Quote";
 import { revalidatePath } from "next/cache";
 
 export default async function Page() {
+  ConnectDB();
   const data = await Quote.find({});
 
   async function createQuote(formData) {
