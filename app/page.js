@@ -45,7 +45,7 @@ export default async function Page() {
         </form>
         <div id="quotes">
           {data.map((item) => (
-            <section>
+            <section key={item._id}>
               <quote>{item.quote}</quote>
               <p>{item.author}</p>
             </section>
